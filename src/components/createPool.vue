@@ -38,7 +38,7 @@ export default {
         description: "",
         img_bg: "",
         img_cover: "",
-        wishing_card_ids: [""]
+        wishing_card_ids: []
       },
       rules: {
         description: [
@@ -54,7 +54,7 @@ export default {
           { required: true, message: "请关联许愿牌", trigger: "blur" }
         ]
       },
-      options: [""]
+      options: []
     };
   },
   created() {
