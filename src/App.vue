@@ -10,6 +10,8 @@
           <el-menu-item index="5">新建许愿牌</el-menu-item>
           <el-menu-item index="6">新建许愿池</el-menu-item>
           <el-menu-item index="7">新建愿望</el-menu-item>
+          <el-menu-item index="8">新建御守牌</el-menu-item>
+          <el-menu-item index="9">御守牌管理</el-menu-item>
         </el-menu>
       </el-aside>
 
@@ -44,6 +46,10 @@ export default {
         this.$router.push({ path: "/createPool" });
       } else if (key == 7) {
         this.$router.push({ path: "/createWishing" });
+      } else if (key == 8) {
+        this.$router.push({ path: "/createGuardingCard" });
+      } else if (key == 9) {
+        this.$router.push({ path: "/showGuardingCard" });
       }
     }
   }
