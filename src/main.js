@@ -7,10 +7,12 @@ import App from './App.vue'
 import showWishings from './components/showWishings.vue'
 import showWishingPools from './components/showWishingPools.vue'
 import showWishingCards from './components/showWishingCards.vue'
+import showGuardingCards from './components/showGuardingCards.vue'
 import showUsers from './components/showUsers.vue'
 import createPool from './components/createPool.vue'
 import createCard from './components/createCard.vue'
 import createWishing from './components/createWishing.vue'
+import createGuardingCard from './components/createGuardingCard.vue'
 
 Vue.use(ElementUI)
 Vue.use(VueRouter)
@@ -23,8 +25,10 @@ const routes = [
   { path: '/showWishings', component: showWishings },
   { path: '/showWishingPools', component: showWishingPools },
   { path: '/showWishingCards', component: showWishingCards },
+  { path: '/showGuardingCards', component: showGuardingCards },
   { path: '/showUsers', component: showUsers },
   { path: '/createPool', component: createPool },
+  { path: '/createGuardingCard', component: createGuardingCard },
   { path: '/createWishing', component: createWishing }
 ]
 global.host = 'http://wish.dtxn.net'
