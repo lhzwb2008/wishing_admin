@@ -1,7 +1,7 @@
 # wishing_admin
-###install
+### install
 npm install
-###test
+### test
 npm run dev
-###server
+### server
 npm run build & node server.js
