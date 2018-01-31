@@ -4,9 +4,6 @@
       <el-form-item label="name" prop="name">
         <el-input v-model="form.name"></el-input>
       </el-form-item>
-      <el-form-item label="status（0免费1收费）" prop="status">
-        <el-input v-model="form.status"></el-input>
-      </el-form-item>
       <el-form-item label="description" prop="description">
         <el-input v-model="form.description"></el-input>
       </el-form-item>
@@ -45,7 +42,6 @@ export default {
           { required: true, message: "请填写description", trigger: "blur" }
         ],
         name: [{ required: true, message: "请填写name", trigger: "blur" }],
-        status: [{ required: true, message: "请填写status", trigger: "blur" }],
         img_bg: [{ required: true, message: "请填写img_bg", trigger: "blur" }],
         img_cover: [
           { required: true, message: "请填写img_cover", trigger: "blur" }
