@@ -2,7 +2,7 @@
   <el-main>
     <el-form :inline="true" :model="formInline" class="demo-form-inline">
       <el-form-item label="buy_user_id">
-        <el-input v-model="formInline.user_id" placeholder="buy_user_id"></el-input>
+        <el-input v-model="formInline.buy_user_id" placeholder="buy_user_id"></el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="onSubmit">查询</el-button>
@@ -40,7 +40,7 @@ export default {
     return {
       tableData: [],
       formInline: {
-        user_id: ""
+        buy_user_id: ""
       },
       options: []
     };
