@@ -49,7 +49,7 @@ export default {
       } else if (key == 8) {
         this.$router.push({ path: "/createGuardingCard" });
       } else if (key == 9) {
-        this.$router.push({ path: "/showGuardingCard" });
+        this.$router.push({ path: "/showGuardingCards" });
       }
     }
   }
