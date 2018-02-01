@@ -93,7 +93,7 @@ export default {
           console.log(errorCallback.body);
         }
       );
-      var data = {'id':this.$router.param.id};
+      var data = {'id':this.$route.params.id};
       this.$http.post(global.host + "/getWishingPoolById",data).then(
         successCallback => {
           var result = successCallback.body.data
