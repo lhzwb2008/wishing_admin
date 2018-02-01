@@ -8,9 +8,9 @@
         <el-input v-model="form.description"></el-input>
       </el-form-item>
       <el-form-item label="关联许愿牌" prop="wishing_card_ids">
-      <el-checkbox-group v-model="form.wishing_card_ids">
-        <el-checkbox v-for="item in options" :label="item.id">{{item.name}}</el-checkbox>
-      </el-checkbox-group>
+        <el-checkbox-group v-model="form.wishing_card_ids">
+          <el-checkbox v-for="item in options" :label="item.id">{{item.name}}</el-checkbox>
+        </el-checkbox-group>
       </el-form-item>
       <el-form-item label="img_bg" prop="img_bg">
         <el-input v-model="form.img_bg"></el-input>
@@ -31,6 +31,7 @@ export default {
   data() {
     return {
       form: {
+        id:"",
         name: "",
         description: "",
         img_bg: "",
@@ -72,7 +73,7 @@ export default {
               });
               console.log(successCallback);
               this.$router.push({ path: "/showWishingPools" });
-            },
+            },  
             errorCallback => {
               console.log(errorCallback);
             }
@@ -87,6 +88,24 @@ export default {
       this.$http.get(global.host + "/showWishingCards").then(
         successCallback => {
           this.$data.options = successCallback.body.data;
+        },
+        errorCallback => {
+          console.log(errorCallback.body);
+        }
+      );
+      var data = {'id':this.$router.param.id};
+      this.$http.post(global.host + "/getWishingPoolById",data).then(
+        successCallback => {
+          var result = successCallback.body.data
+          if(result){
+            this.$data.form.id = result.id;
+            this.$data.form.name = result.name;
+            this.$data.form.description = result.description;
+            this.$data.form.img_bg = result.img_bg;
+            this.$data.form.img_cover = result.img_cover;
+            this.$data.form.wishing_card_ids = result.wishing_card_ids.split(',');
+          }
+          
         },
         errorCallback => {
           console.log(errorCallback.body);

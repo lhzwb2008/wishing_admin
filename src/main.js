@@ -23,14 +23,14 @@ Vue.http.options.emulateJSON = true;
 
 const routes = [
   { path: '/', component: showWishings },
-  { path: '/createCard', component: createCard },
+  { path: '/createCard:/id', component: createCard },
   { path: '/showWishings', component: showWishings },
   { path: '/showWishingPools', component: showWishingPools },
   { path: '/showWishingCards', component: showWishingCards },
   { path: '/showGuardingCards', component: showGuardingCards },
   { path: '/showGuardings', component: showGuardings },
   { path: '/showUsers', component: showUsers },
-  { path: '/createPool', component: createPool },
+  { path: '/createPool/:id', component: createPool },
   { path: '/createGuardingCard', component: createGuardingCard },
   { path: '/createGuarding', component: createGuarding },
   { path: '/createWishing', component: createWishing }
