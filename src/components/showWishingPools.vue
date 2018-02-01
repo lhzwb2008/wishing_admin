@@ -77,7 +77,7 @@ export default {
         );
     },
     editRow(row){
-      this.$router.push({ path: "/createPool/".row.id });
+      this.$router.push({ path: "/createPool/"+row.id });
     }
   }
 };
