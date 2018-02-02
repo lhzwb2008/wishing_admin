@@ -103,8 +103,7 @@ export default {
             this.$data.form.description = result.description;
             this.$data.form.img_bg = result.img_bg;
             this.$data.form.img_cover = result.img_cover;
-            this.$data.form.wishing_card_ids = result.wishing_card_ids.split(',');
-           console.log(result.wishing_card_ids.split(','));
+            this.$data.form.wishing_card_ids = result.wishing_card_ids.split(',').map(Number);
           }
           
         },
