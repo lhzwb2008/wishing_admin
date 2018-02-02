@@ -62,7 +62,7 @@ export default {
             successCallback => {
               this.$message({
                 type: "success",
-                message: "添加成功!"
+                message: "操作成功!"
               });
               this.$router.push({ path: "/showWishingCards" });
             },
