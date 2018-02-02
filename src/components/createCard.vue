@@ -18,7 +18,7 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="onSubmit">提交</el-button>
-        <el-button>取消</el-button>
+        <el-button @click="resetForm">重置</el-button>
       </el-form-item>
     </el-form>
   </el-main>
@@ -76,7 +76,10 @@ export default {
         }
       });
     },
-     fetchData() {
+    resetForm() {
+        this.$refs["form"].resetFields();
+    },
+    fetchData() {
       var data = {'id':this.$route.params.id};
       this.$http.post(global.host + "/getWishingCardById",data).then(
         successCallback => {
