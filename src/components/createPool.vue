@@ -104,8 +104,8 @@ export default {
             this.$data.form.img_bg = result.img_bg;
             this.$data.form.img_cover = result.img_cover;
             this.$data.form.wishing_card_ids = result.wishing_card_ids.split(',').map(Number);
+            console.log(this.$data.form.wishing_card_ids)
           }
-          
         },
         errorCallback => {
           console.log(errorCallback.body);
