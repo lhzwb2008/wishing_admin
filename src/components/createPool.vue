@@ -62,14 +62,14 @@ export default {
       this.$refs["form"].validate(valid => {
         console.log(valid);
         if (valid) {
-          console.log("submit!!");
+          console.log(this.$data.form);
           var data = {};
           data = this.$data.form;
           this.$http.post(global.host + "/createWishingPool", data).then(
             successCallback => {
               this.$message({
                 type: "success",
-                message: "创建成功!"
+                message: "操作成功!"
               });
               console.log(successCallback);
               this.$router.push({ path: "/showWishingPools" });
