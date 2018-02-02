@@ -23,6 +23,9 @@
           <el-button @click.native.prevent="deleteRow(scope.$index, tableData,scope.row)" type="text" size="small">
             删除
           </el-button>
+          <el-button @click="editRow(scope.row)" type="text" size="small">
+            编辑
+          </el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -65,6 +68,9 @@ export default {
             console.log(errorCallback.body);
           }
         );
+    },
+    editRow(row){
+      this.$router.push({ path: "/createCard/"+row.id });
     }
   }
 };

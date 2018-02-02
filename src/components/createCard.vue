@@ -28,6 +28,7 @@ export default {
   data() {
     return {
       form: {
+        id:"",
         name: "",
         description: "",
         img: "",
@@ -74,6 +75,25 @@ export default {
           return false;
         }
       });
+    },
+     fetchData() {
+      var data = {'id':this.$route.params.id};
+      this.$http.post(global.host + "/getWishingCardById",data).then(
+        successCallback => {
+          var result = successCallback.body.data
+          if(result){
+            this.$data.form.id = result.id;
+            this.$data.form.name = result.name;
+            this.$data.form.description = result.description;
+            this.$data.form.img = result.img;
+            this.$data.form.valid_time = result.valid_time;
+            this.$data.form.price = result.price;
+          }
+        },
+        errorCallback => {
+          console.log(errorCallback.body);
+        }
+      );
     }
   }
 };
