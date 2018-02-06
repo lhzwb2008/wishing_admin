@@ -1,30 +1,31 @@
 <template>
 <el-upload
-  class="upload-demo"
   action="https://wepic.dtxn.net/api/v1/anonymous/images/"
-  :on-preview="handlePreview"
-  :on-success="handleSuccess"
-  multiple
-  :file-list="fileList">
-  <el-button size="small" type="primary">点击上传</el-button>
-  <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+  list-type="picture-card"
+  :on-preview="handlePictureCardPreview"
+  :on-remove="handleRemove">
+  <i class="el-icon-plus"></i>
 </el-upload>
+<el-dialog :visible.sync="dialogVisible">
+  <img width="100%" :src="dialogImageUrl" alt="">
+</el-dialog>
 </template>
+
 <script>
   export default {
     data() {
       return {
-        fileList: []
-      }
+        dialogImageUrl: '',
+        dialogVisible: false
+      };
     },
     methods: {
-      handleSuccess(response,file,fileList) {
-        if(response.status==200){
-          var newfile = {};
-          newfile.name = file.name;
-          newfile.url = "http://wxxcx-cdn.dtxn.net"+response.data;
-          fileList.push(newfile);
-        }
+      handleRemove(file, fileList) {
+        console.log(file, fileList);
+      },
+      handlePictureCardPreview(file) {
+        this.dialogImageUrl = file.response.data;
+        this.dialogVisible = true;
       }
     }
   }
