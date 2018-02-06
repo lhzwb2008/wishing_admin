@@ -20,10 +20,11 @@
     methods: {
       handleSuccess(response,file,fileList) {
         if(response.status==200){
-          var newfile = {};
-          newfile.name = file.name;
-          newfile.url = "http://wxxcx-cdn.dtxn.net"+response.data;
-          fileList.push(newfile);
+          console.log(response.data)
+          // var newfile = {};
+          // newfile.name = file.name;
+          // newfile.url = "http://wxxcx-cdn.dtxn.net"+response.data;
+          // fileList.push(newfile);
         }
       }
     }
