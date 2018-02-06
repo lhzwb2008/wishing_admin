@@ -15,6 +15,7 @@ import createCard from './components/createCard.vue'
 import createWishing from './components/createWishing.vue'
 import createGuardingCard from './components/createGuardingCard.vue'
 import createGuarding from './components/createGuarding.vue'
+import upload from './components/upload.vue'
 
 Vue.use(ElementUI)
 Vue.use(VueRouter)
@@ -35,7 +36,8 @@ const routes = [
   { path: '/createPool/:id', component: createPool },
   { path: '/createGuardingCard', component: createGuardingCard },
   { path: '/createGuarding', component: createGuarding },
-  { path: '/createWishing', component: createWishing }
+  { path: '/createWishing', component: createWishing },
+  { path: '/upload', component: upload },
 ]
 global.host = 'http://wish.dtxn.net'
 

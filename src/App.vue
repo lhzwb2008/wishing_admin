@@ -8,6 +8,7 @@
           <el-menu-item index="3">用户管理</el-menu-item>
           <el-menu-item index="4">许愿池管理</el-menu-item>
           <el-menu-item index="5">许愿牌管理</el-menu-item>
+          <el-menu-item index="12">图片上传</el-menu-item>
           <el-menu-item index="6">新建许愿牌</el-menu-item>
           <el-menu-item index="7">新建许愿池</el-menu-item>
           <el-menu-item index="8">新建愿望</el-menu-item>
@@ -56,6 +57,8 @@ export default {
         this.$router.push({ path: "/createGuardingCard" });
       } else if (key == 11) {
         this.$router.push({ path: "/showGuardingCards" });
+      } else if (key == 12) {
+        this.$router.push({ path: "/upload" });
       }
     }
   }
