@@ -22,7 +22,7 @@
         console.log(file, fileList);
       },
       handlePictureCardPreview(file) {
-        this.dialogImageUrl = file.response.data;
+        this.dialogImageUrl = 'http://wxxcx-cdn.dtxn.net'+file.response.data;
         this.dialogVisible = true;
       }
     }
