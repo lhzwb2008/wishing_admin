@@ -1,10 +1,10 @@
 <template>
   <el-main>
-    <el-upload action="https://wepic.dtxn.net/api/v1/anonymous/images/" list-type="picture-card" :on-preview="handlePictureCardPreview" :on-remove="handleRemove">
+    <el-upload action="https://wepic.dtxn.net/api/v1/anonymous/images/" list-type="picture-card" :on-preview="handlePictureCardPreview">
       <i class="el-icon-plus"></i>
     </el-upload>
     <el-dialog :visible.sync="dialogVisible">
-      <img width="100%" :src="dialogImageUrl" alt="">
+      {{dialogImageUrl}}
     </el-dialog>
   </el-main>
 </template>
@@ -18,9 +18,6 @@
       };
     },
     methods: {
-      handleRemove(file, fileList) {
-        console.log(file, fileList);
-      },
       handlePictureCardPreview(file) {
         this.dialogImageUrl = 'http://wxxcx-cdn.dtxn.net'+file.response.data;
         this.dialogVisible = true;
